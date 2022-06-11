@@ -1,3 +1,20 @@
+tutorial :
+## "https://www.youtube.com/c/WebTechTalk/about"
+
+description:
+This video explains about all basic concepts like:
+
+Components
+Data Binding
+Structural and Attribute Directives
+Communication between components
+Services & Dependency Injection
+Life Cycle Hooks with examples
+Routing
+Forms
+HTTP
+Pipes
+
 # MoviesReview
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
