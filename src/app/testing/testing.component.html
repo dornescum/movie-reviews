@@ -1,0 +1,88 @@
+<div class="container">
+  <h1>data binding</h1>
+  <h2>String interpolation</h2>
+  <span>my name is {{firstName}}</span>
+  <h2>Property binding</h2>
+  <img [src]="imgSource" alt="img" width="100px">
+  <br>
+  <hr>
+  <h2>Event binding</h2>
+  <input (input)="getTheValue($event)" type="text">
+
+  <hr>
+  <br>
+  <h2>Two way binding</h2>
+  <!--  <input type="text" [value]="defaultValue" (input)="changeValue($event)">-->
+  <input [(ngModel)]="defaultValue" type="text">
+  <span>{{defaultValue}}</span>
+  <hr>
+  <br>
+  <div class="container" style="margin-bottom: 4rem">
+    <h2>NgIf</h2>
+    <button (click)="approved(true)">Approved</button>
+    <button (click)="approved(false)">Reject</button>
+    <div *ngIf="isApproved"><p>Your application is approved</p></div>
+    <div *ngIf="!isApproved"><p>Your application is rejected</p></div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <span *ngFor="let number of numbers; let i = index" style="width: 5rem;">{{i}}-{{number}}</span>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h2>
+      NgSwitch
+    </h2>
+    <input [(ngModel)]="luckyNumber" id="luckyNumber" name="luckyNumber" type="number">
+    <div [ngSwitch]="luckyNumber" class="row">
+      <p *ngSwitchCase="1">Strong</p>
+      <p *ngSwitchCase="2">Week</p>
+      <p *ngSwitchCase="3">Inteligent</p>
+      <p *ngSwitchCase="4">Fool</p>
+      <p *ngSwitchCase="5">Brave</p>
+      <p *ngSwitchDefault>Enter number from 1 to 5</p>
+    </div>
+  </div>
+
+  <hr>
+  <div class="container">
+    <div class="row">
+      <p *ngFor="let number of numbers; let i = index" style="width: 5rem;">
+        <span *ngIf="(i + 1) % 2 ===0">
+           {{i}}-{{number}}
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <hr>
+  <div class="container">
+    <div class="row">
+      <p [ngStyle]="{
+      color: isStyleApplied ? 'white' : 'black',
+      backgroundColor: isStyleApplied ? 'green':'white'
+    }">click button to toggle the style</p>
+      <button (click)="toggleStyle()">toggle style</button>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <!--    FIXME eroare culoare-->
+    <!--    <p [ngClass]="{-->
+    <!--     red:highLightColor === 'red',-->
+    <!--     green:highLightColor === 'green',-->
+    <!--     blue:highLightColor === 'blue',-->
+    <!--  }">style me</p>-->
+    <!--    <p [ngClass]="green: highLightColor('blue')">test</p>-->
+    <div class="row">
+      <button (click)="highlight('red')" class="btn btn-danger">red</button>
+      <button (click)="highlight('green')" class="btn btn-success">green</button>
+      <button (click)="highlight('blue')" class="btn btn-primary">blue</button>
+    </div>
+  </div>
+
+
+</div>

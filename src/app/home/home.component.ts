@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
       .get('http://localhost:4200/assets/data/trending-movies.json')
       .subscribe((movies) => {
         this.trendingMovies = movies;
-        console.log(this.trendingMovies)
+        // console.log(this.trendingMovies)
       });
   }
 

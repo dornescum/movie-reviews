@@ -11,9 +11,11 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {FeatureModule} from "./feature/feature.module";
+import { TestingComponent } from './testing/testing.component';
+
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, HeaderComponent, MovieComponent
+  declarations: [AppComponent, LoginComponent, HomeComponent, HeaderComponent, MovieComponent, TestingComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgbModule, FeatureModule],
